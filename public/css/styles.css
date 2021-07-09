@@ -1,0 +1,11 @@
+/* base.html.twig */
+.base_body {
+  min-height: 500px;
+  height: 100%;
+}
+
+/* contact.html.twig */
+#subpage_body {
+  min-height: 500px;
+  margin-bottom: 1%;
+}
