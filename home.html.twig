@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{#show lucky number#}
+{% block body %}
+    <h1>Home Page</h1>
+    <p class="important">
+        Welcome on my awesome homepage.
+    </p>
+    <div class="row" id="subpage_body">
+        <div class="col-sm-6 bg-primary">
+            Body Col Left
+            <h1> Random lucky number is : {{ number }}</h1>
+        </div>
+        <div class="col-sm-6 bg-success">
+            Body Col Right
+        </div>
+    </div>
+
+{% endblock %}
+
+
