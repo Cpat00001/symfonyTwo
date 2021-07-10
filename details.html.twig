@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% dump(blogpost)%}
+<div class="ind_blog">
+    <div class="ind_head">
+        <h1>{{ blogpost.title }}</h1>
+    </div>
+    <div class="ind_body">
+        <h5>{{ blogpost.description }}</h5>
+    </div>
+    <div class="ind_footer">
+        <a href="/lucky/blog">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-warning" type="button">Go Back to List of Blogs</button>
+            </div>
+        </a>
+    </div>
+</div>
+
+{% endblock body%}
