@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1>Hello Blog List</h1>
+
+{% for blog in blogs %}
+
+{#{{ dump(blog) }}#}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="blogPost">
+            <div class="blogpost_head bg-dark text-white">
+                <h5>{{ blog.title }}</h5>
+                <p>Created on {{ blog.created | date("d/m/Y") }}</p>
+            </div>
+            <div class="blogpost_body">
+                <p>{{ blog.description }}</p>
+            </div>
+            <a href="details/{{ blog.id }}">
+                <div class="blogpost_footer d-grid col-6 mx-auto">
+                    <button type="button" class="btn btn-warning" id="butON">Read More</button>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock body %}

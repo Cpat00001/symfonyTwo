@@ -1,3 +1,8 @@
+/* general settings */
+a {
+  text-decoration: none;
+}
+
 /* base.html.twig */
 .base_body {
   min-height: 500px;
@@ -8,4 +13,37 @@
 #subpage_body {
   min-height: 500px;
   margin-bottom: 1%;
+}
+
+/* blog.html.twig */
+.blogPost {
+  border: 1px solid black;
+  margin-bottom: 1%;
+  padding: 1%;
+}
+.blogpost_head {
+  padding: 1%;
+}
+.blogpost_body {
+  padding: 1%;
+}
+.blogpost_footer {
+}
+/* individual blogpost -> details */
+.ind_blog {
+  border: 1px solid rgb(236, 233, 233);
+  padding: 1%;
+  -webkit-box-shadow: 2px 2px 30px 17px rgba(204, 196, 196, 0.61);
+  box-shadow: 2px 2px 30px 17px rgba(204, 196, 196, 0.61);
+  margin-top: 5%;
+}
+.ind_head {
+  padding: 1%;
+}
+.ind_body {
+  padding: 1%;
+}
+.ind_footer {
+  padding: 1%;
+  margin-top: 2%;
 }
