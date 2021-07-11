@@ -8,8 +8,10 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           {%  for menu_item in menu %}
+          {# {{ dump(menu)}} #}
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ menu_item | lower }}">{{ menu_item }}</a>
+              {# <a class="nav-link active" aria-current="page" href="{{ menu_item | lower }}">{{ menu_item }}</a> #}
+              <a class="nav-link active" aria-current="page" href="{{ path(menu_item) }}">{{ menu_item }}</a>
             </li>
           {% endfor %}
         </ul>
