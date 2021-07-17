@@ -3,7 +3,7 @@
 // src/Form/Type/UserType.php
 namespace App\Form\Type;
 
-use App\Entity\Task;
+use App\Entity\User;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use Symfony\Component\Form\AbstractType;
@@ -17,9 +17,9 @@ class UserType extends AbstractType
     {
         $builder 
             ->add('username',TextType::class)
+            ->add('email',TextType::class)
             ->add('password',TextType::class)
-            ->add('confirm_password',TextType::class)
-            ->add('save',SubmitType::class)
+            ->add('save',SubmitType::class,['label' => 'Register Me','attr' => array('class' => 'btn btn-primary mt-5')])
             ;
     }
     public function configureOptions(OptionsResolver $resolver): void 
