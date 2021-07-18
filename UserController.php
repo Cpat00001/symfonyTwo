@@ -35,7 +35,11 @@ class UserController extends AbstractController
             // $form->getData() holds the submitted values
             // but, the original `$task` variable has also been updated
             $user = $form->getData();
-            var_dump($user);
+            // var_dump($user);
+            //get username calling getter function from User Entity
+            $username = $user->getUserIdentifier();
+            //get user's email calling getter function from User Entity
+            $user_email = $user->getEmail();
 
             // create connection to DB and save submitted data in DB Table User
             $entityManager = $this->getDoctrine()->getManager();
@@ -46,10 +50,14 @@ class UserController extends AbstractController
             // display flash message with confirmation and redirect
             $this->addFlash(
                 'notice',
-                'You have been registered'
+                'You have been registered as ',
             );
             //redirect after submitting a form and pass $user as parameter to display info 
-            return $this->redirectToRoute('registered');
+            return $this->redirectToRoute('registered',
+            [
+                'username' => $username,
+                'user_email' => $user_email,
+            ]);
         }
 
         return $this->render('lucky/register.html.twig',[
@@ -57,18 +65,21 @@ class UserController extends AbstractController
         ]);
     }
     /**
-     * @Route("lucky/registered",name="registered")
+     * @Route("lucky/registered/{username}/{user_email}",name="registered")
      */
-    public function registered_confirmation()
+    public function registered_confirmation(Request $request, $username, $user_email)
     {
         $menu = ['Home','Blog','Contact'];
         $title = 'Registration Confirmation Page';
         // $reg_user = $this->get($username); 
+        // var_dump($username);
 
         $confirmation = $this->renderView('lucky/registered.html.twig', [
            
             'menu' => $menu,
             'title' => $title,
+            'username' => $username,
+            'user_email' => $user_email,
         ]);
         return new Response($confirmation);
     }

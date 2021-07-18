@@ -17,7 +17,7 @@ class LuckyController extends AbstractController
     {
         $title = "Team DR";
         $number = random_int(0, 100);
-        $menu = ['Home','Blog','Contact'];
+        $menu = ['Home','Blog','Contact','Register'];
 
 
         $contents =  $this->renderView('lucky/home.html.twig', [
@@ -28,14 +28,14 @@ class LuckyController extends AbstractController
         return new Response($contents);
     }
     /**
-     * @Route("lucky/contact",name="contact",methods={"GET"})
+     * @Route("lucky/contact",name="Contact",methods={"GET"})
      */
     public function contact()
     {
         $phone = "123-456-789";
         $email = "contact@teamdr.com";
         $title = "Contact Us";
-        $menu = ['Home','Blog','Contact'];
+        $menu = ['Home','Blog','Contact','Register'];
 
         $contact = $this->renderView('lucky/contact.html.twig', [
             'phone' => $phone,
