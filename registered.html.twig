@@ -6,13 +6,13 @@
 
 {% block body %}
 
-{# {{ dump(user) }} #}
-
-<div class="container">
-    {% for message in app.flashes('notice') %}
-    <div class="alert alert-success" role="alert">
-        {{ message }}
-      </div>
-      {% endfor %}
-</div>
+  <div class="container">
+        
+  {% for message in app.flashes('notice') %}
+    <div class="alert alert-success mt-2" role="alert">
+      <p>{{ message }}<b>{{ username }}</b></p>
+      <p>using email <b>{{ user_email }}</b></p>
+    </div>
+  {% endfor %}
+  </div>
 {% endblock %}
