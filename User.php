@@ -37,16 +37,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string")
      * @Assert\NotBlank
      * @Assert\Length(min=3)
-     * @Assert\Regex(
-     *          pattern="/\d/",
-     *          match=true,
-     *          message:"Your password has to contain a number"
-     * )
      */
     private $password;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Email(
+     *          message = "The email '{{ value }} ' is not valid email.Please provide valid email format"
+     * )
      */
     private $email;
 
