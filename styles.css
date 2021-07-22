@@ -47,3 +47,19 @@ a {
   padding: 1%;
   margin-top: 2%;
 }
+/* register form */
+#register_form {
+  margin-top: 1%;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 1%;
+  text-align: center;
+}
+#reg_form_input_field {
+  padding: 10px;
+  background-color: rgba(204, 196, 196, 0.61);
+  color: black;
+}
+.form-error {
+  color: red;
+}

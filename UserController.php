@@ -60,7 +60,13 @@ class UserController extends AbstractController
             ]);
         }
 
+        // pass menu to Twig 
+        $menu = ['Home','Blog','Contact'];
+        $title = "Registration Form";
+
         return $this->render('lucky/register.html.twig',[
+            'menu' => $menu,
+            'title' => $title,
             'form' => $form->createView(),
         ]);
     }
