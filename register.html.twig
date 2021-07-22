@@ -1,11 +1,74 @@
 {# templates/lucky/newuser.html.twig #}
 
-{# {% extends "base.html.twig" %} #}
+{% extends "base.html.twig" %}
 
-{# {% block body %} #}
+{% block body %}
 
-<div class="container">
-    {{ form(form) }}
+<div class="container" id="register_form">
+    {# {{ form(form) }} #}
+
+    {{ form_start(form) }}
+        {% if form.vars.errors | length < 1  %}
+                <p>Please, fill in a form and submit</p>
+        {% else %}
+                <div class="alert alert-danger role="alert"">
+                    {{ form_errors(form) }}
+                </div>
+        {% endif %}
+        
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6" id="reg_form_input_field">
+                <div class="row">
+                    <div class="form-error">
+                        {{ form_errors(form.username) }}
+                    </div>
+                    <div class="col-sm-3">
+                        {{ form_label(form.username) }}
+                    </div>
+                    <div class="col-sm-8">
+                        {{ form_widget(form.username) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6" id="reg_form_input_field">
+                <div class="form-error">
+                    {{ form_errors(form.email) }}
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        {{ form_label(form.email) }}
+                    </div>
+                    <div class="col-sm-8">
+                        {{ form_widget(form.email) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6" id="reg_form_input_field">
+                <div class="form-error">
+                    {{ form_errors(form.password) }}
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        {{ form_label(form.password) }}
+                    </div>
+                    <div class="col-sm-8">
+                        {{ form_widget(form.password) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        {# jak juz sformatujesz ladnie registerForm wytnij ponizy TAG z form #}
+        {{ form_end(form) }}
 </div>
 
-{# {% endblock body %} #}
+{% endblock body %}
