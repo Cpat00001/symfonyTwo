@@ -37,6 +37,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string")
      * @Assert\NotBlank
      * @Assert\Length(min=3)
+     * @Assert\Regex(
+     *      pattern="/\d/", 
+     *      match=true,
+     *      message = "Your password has to contain at least one number"
+     * )
      */
     private $password;
 
